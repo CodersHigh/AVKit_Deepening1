@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - Query
 
-enum Query {
-    case mountain, sunset, beach, flowers, nature, forest, rain, food, sky, space
+enum Query: String, CaseIterable {
+    case mountain, sunset, beach, flowers, forest, rain, food, sky, space
 }
 
 // MARK: - ResponseBody
@@ -38,7 +38,7 @@ struct Video: Decodable {
 
 class VideoManager: ObservableObject {
     @Published var videos: [Video] = []
-    @Published var selectedQuery: Query = Query.nature {
+    @Published var selectedQuery: Query = Query.beach {
         didSet {
             Task.init {
                 await fetchVideo(query: selectedQuery)
@@ -61,7 +61,7 @@ class VideoManager: ObservableObject {
             }
             
             // API 키 URL 구하기
-            guard let searchAPIKEYURL = Bundle.main.url(forResource: "info", withExtension: "plist") else {
+            guard let searchAPIKEYURL = Bundle.main.url(forResource: "PexelsInfo", withExtension: "plist") else {
                 fatalError("Missing searchAPIKEYURL")
             }
             guard let dictionary = NSDictionary(contentsOf: searchAPIKEYURL) else {
@@ -85,8 +85,11 @@ class VideoManager: ObservableObject {
             let decodedData = try decoder.decode(ResponseBody.self, from: data)
             
             // Published 변수인 videos 업데이트하기
-            self.videos = []
-            self.videos = decodedData.videos
+            DispatchQueue.main.async {
+                self.videos = []
+                self.videos = decodedData.videos
+                print(self.videos)
+            }
             
         } catch {
             print("Error fetching data from Pexels: \(error)")

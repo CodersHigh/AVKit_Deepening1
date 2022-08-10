@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var videoManager = VideoManager()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        QueryScrollView(videoManager: videoManager)
     }
 }
 
