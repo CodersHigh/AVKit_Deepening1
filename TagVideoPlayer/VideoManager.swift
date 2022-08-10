@@ -20,6 +20,7 @@ struct ResponseBody: Decodable {
 }
 
 struct Video: Decodable {
+    var id: Int
     var image: String
     var duration: Int
     var user: User

@@ -1,5 +1,5 @@
 //
-//  QueryScrollView.swift
+//  QueryListView.swift
 //  TagVideoPlayer
 //
 //  Created by 이로운 on 2022/08/10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QueryScrollView: View {
+struct QueryListView: View {
     @ObservedObject var videoManager: VideoManager
     
     func getTitle(query: Query) -> String {
@@ -51,12 +51,11 @@ struct QueryScrollView: View {
             .padding(20)
         }
         .frame(height: 80)
-        //.background(Color.black)
     }
 }
 
-struct QueryScrollView_Previews: PreviewProvider {
+struct QueryListView_Previews: PreviewProvider {
     static var previews: some View {
-        QueryScrollView(videoManager: VideoManager())
+        QueryListView(videoManager: VideoManager())
     }
 }

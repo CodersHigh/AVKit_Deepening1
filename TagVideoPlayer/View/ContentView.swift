@@ -11,7 +11,10 @@ struct ContentView: View {
     @StateObject var videoManager = VideoManager()
     
     var body: some View {
-        QueryScrollView(videoManager: videoManager)
+        VStack(spacing: 0) {
+            QueryListView(videoManager: videoManager)
+            VideoListView(videoManager: videoManager)
+        }
     }
 }
 
