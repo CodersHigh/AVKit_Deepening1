@@ -10,6 +10,7 @@ import SwiftUI
 struct QueryListView: View {
     @ObservedObject var videoManager: VideoManager
     
+    // 쿼리 이름을 한글로 번역한 title 얻기
     func getTitle(query: Query) -> String {
         switch query {
         case .mountain: return "산"
@@ -28,7 +29,7 @@ struct QueryListView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 20) {
                 ForEach(Query.allCases, id: \.self) { query in
-                    // Query Buton
+                    // 쿼리 버튼
                     ZStack {
                         ZStack {
                             Image(uiImage: UIImage(named: query.rawValue)!)

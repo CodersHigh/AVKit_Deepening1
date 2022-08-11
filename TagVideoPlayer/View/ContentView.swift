@@ -11,9 +11,12 @@ struct ContentView: View {
     @StateObject var videoManager = VideoManager()
     
     var body: some View {
-        VStack(spacing: 0) {
-            QueryListView(videoManager: videoManager)
-            VideoListView(videoManager: videoManager)
+        NavigationView {
+            VStack(spacing: 0) {
+                QueryListView(videoManager: videoManager)
+                VideoListView(videoManager: videoManager)
+            }
+            .navigationBarHidden(true)
         }
     }
 }

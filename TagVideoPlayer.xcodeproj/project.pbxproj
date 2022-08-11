@@ -15,6 +15,7 @@
 		26DD9FDB28A36A3A005F3D10 /* PexelsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26DD9FDA28A36A3A005F3D10 /* PexelsInfo.plist */; };
 		26DD9FDF28A37188005F3D10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD9FDE28A37188005F3D10 /* ContentView.swift */; };
 		26DD9FE328A37211005F3D10 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD9FE228A37211005F3D10 /* VideoListView.swift */; };
+		26DD9FE528A393E4005F3D10 /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD9FE428A393E4005F3D10 /* VideoPlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		26DD9FDA28A36A3A005F3D10 /* PexelsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PexelsInfo.plist; sourceTree = "<group>"; };
 		26DD9FDE28A37188005F3D10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		26DD9FE228A37211005F3D10 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		26DD9FE428A393E4005F3D10 /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				26DD9FDE28A37188005F3D10 /* ContentView.swift */,
 				26DD9FE128A371E4005F3D10 /* Component */,
+				26DD9FE428A393E4005F3D10 /* VideoPlayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				26DD9FC928A3382C005F3D10 /* TagVideoPlayerApp.swift in Sources */,
 				26DD9FDF28A37188005F3D10 /* ContentView.swift in Sources */,
 				26DD9FD928A34019005F3D10 /* VideoManager.swift in Sources */,
+				26DD9FE528A393E4005F3D10 /* VideoPlayView.swift in Sources */,
 				26DD9FE328A37211005F3D10 /* VideoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

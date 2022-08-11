@@ -9,7 +9,6 @@ import SwiftUI
 
 struct VideoListView: View {
     @ObservedObject var videoManager: VideoManager
-    
     var columns = [GridItem(.adaptive(minimum: 160))]
     
     var body: some View {
@@ -17,24 +16,18 @@ struct VideoListView: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(videoManager.videos, id: \.id) { video in
                     NavigationLink {
-                        // VideoView
+                        VideoPlayView(video: video)
                     } label: {
-                        // Video Card
+                        // 비디오 카드
                         ZStack {
-                            ZStack {
-                                AsyncImage(url: URL(string: video.image)) { image in
-                                    image.resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 160, height: 250)
-                                        .cornerRadius(30)
-                                } placeholder: {
-                                    Rectangle()
-                                        .foregroundColor(.gray.opacity(0.3))
-                                        .frame(width: 160, height: 250)
-                                        .cornerRadius(30)
-                                }
+                            AsyncImage(url: URL(string: video.image)) { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 160, height: 250)
+                                    .cornerRadius(30)
+                            } placeholder: {
                                 Rectangle()
-                                    .foregroundColor(.black.opacity(0.2))
+                                    .foregroundColor(.gray.opacity(0.3))
                                     .frame(width: 160, height: 250)
                                     .cornerRadius(30)
                             }

@@ -89,7 +89,6 @@ class VideoManager: ObservableObject {
             DispatchQueue.main.async {
                 self.videos = []
                 self.videos = decodedData.videos
-                print(self.videos)
             }
             
         } catch {
